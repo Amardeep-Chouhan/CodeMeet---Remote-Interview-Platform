@@ -18,6 +18,4 @@ if(ENV.NODE_ENV==="production"){
     })
 }
 
-app.listen(3000,()=>{
-    console.log("server is running on port:",ENV.PORT)
-})
+startServer();
