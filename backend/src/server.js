@@ -1,7 +1,7 @@
 import express from "express";
 import path from "path"
 import {ENV} from "./lib/env.js";
-import { connectDB } from "./lib/db.js ";
+import { connectDB } from "./lib/db.js";
 
  const app= express();
 
@@ -22,7 +22,7 @@ const startServer =async()=>
 {
     try {
         await connectDB();
- app.listen(3000,()=>{
+ app.listen(ENV.PORT,()=>{
     console.log("server is running on port:",ENV.PORT)
 })
         
@@ -32,5 +32,6 @@ const startServer =async()=>
         
     }
 }
+
 
 startServer();
