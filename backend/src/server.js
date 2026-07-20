@@ -1,6 +1,7 @@
 import express from "express";
 import path from "path"
 import {ENV} from "./lib/env.js";
+import cors from "cors";
 
  const app= express();
 
@@ -9,6 +10,8 @@ import {ENV} from "./lib/env.js";
 app.get("/health",(req,res)=>{
     res.status(200).json({msg:"server is running"})
 })
+app.use(cors({origin:ENV_CLIENT_URL,creadentials:true }));
+app.use(express.json());
 
 if(ENV.NODE_ENV==="production")
     {
