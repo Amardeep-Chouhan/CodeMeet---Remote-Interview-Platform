@@ -1,5 +1,5 @@
 import express from "express";
-import path from "path"
+import path from "path";
 import {ENV} from "./lib/env.js";
 import cors from "cors";
 
