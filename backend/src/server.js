@@ -2,6 +2,7 @@ import express from "express";
 import path from "path";
 import {ENV} from "./lib/env.js";
 import cors from "cors";
+import {connectDB} from "./lib/db.js";
 
  const app= express();
 
@@ -10,7 +11,7 @@ import cors from "cors";
 app.get("/health",(req,res)=>{
     res.status(200).json({msg:"server is running"})
 })
-app.use(cors({origin:ENV_CLIENT_URL,creadentials:true }));
+app.use(cors({origin:ENV.CLIENT_URL,credentials: true }));
 app.use(express.json());
 
 if(ENV.NODE_ENV==="production")
